@@ -1,16 +1,21 @@
-# Digital Library Audit System (SQL)
+# SafeLog: Password Validation Utility (Java)
 
 ## Project Overview
-This project was developed for a community college to streamline the management of their book collection and student borrowing records. The system focuses on tracking overdue materials and analyzing genre popularity to assist in future inventory decisions.
+SafeLog is a security-focused tool designed for an employee portal to ensure all user passwords adhere to strict corporate safety standards.
 
 ## Problem Statement
-The objective was to design a relational database capable of generating reports for unreturned items and maintaining an up-to-date registry of active student accounts.
+The goal was to move beyond basic conditional checks and build a modular Password Strength Checker that provides specific feedback to users regarding their password security.
 
-## Core Functionality
-* **Relational Database Design**: Established organized tables for Books, Students, and IssuedBooks with appropriate data relationships.
-* **Overdue Tracking Logic**: Implemented a query to identify students who have not returned books within the standard 14-day window.
-* **Genre Popularity Analysis**: Utilized data aggregation to determine which categories, such as Fiction or Science, are most frequently borrowed.
-* **Database Maintenance**: Developed logic to automatically identify and remove student records for accounts that have remained inactive for over 3 years.
+## Security Policy Requirements
+To ensure account protection, the validator enforces the following rules:
+* **Minimum Length**: Passwords must be at least 8 characters long.
+* **Uppercase Requirement**: At least one uppercase letter must be included.
+* **Numeric Requirement**: At least one digit (0-9) must be present.
+
+## Technical Implementation
+* **Validation Logic**: Uses iterative loops to scan for specific character types, such as digits and uppercase letters.
+* **User Feedback System**: Provides clear, descriptive messages like "Missing a digit" or "Too short" to guide the user toward a secure entry.
+* **Retry Mechanism**: Employs a persistent loop that continues to prompt the user until a secure password is created.
 
 ## Deliverables
-* **DigitalLibrary.sql**: Includes the complete table schemas and analytical queries.
+* **PasswordValidator.java**: A standalone Java file demonstrating string manipulation and input control.
